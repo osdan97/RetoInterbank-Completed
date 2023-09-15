@@ -23,6 +23,7 @@ public class ClienteServiceImpl implements ClienteService {
     @Override
     public Cliente save(Cliente cliente) {
 
+        cliente.setEstado(true);
         return clienteRepository.save(cliente);
     }
 

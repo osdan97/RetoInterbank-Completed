@@ -16,6 +16,7 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("api/cliente")
+@CrossOrigin(origins = "*")
 public class ClienteController {
 
     @Autowired
@@ -40,8 +41,7 @@ public class ClienteController {
                 return new ResponseEntity(new Mensaje("Es obligatorio ingresar el nombre"), HttpStatus.BAD_REQUEST);
             if (StringUtils.isBlank(clienteEnt.getApellido()))
                 return new ResponseEntity(new Mensaje("Es obligatorio ingresar el apellido"), HttpStatus.BAD_REQUEST);
-            if (clienteEnt.getEstado() == null)
-                return new ResponseEntity<>("Colocar el estado es obligatorio", HttpStatus.BAD_REQUEST);
+
             else {
 
 
